@@ -9,11 +9,11 @@ require_once('UniqueLinkedList.php');
  * Result of("Ante") -> { "A", "An", "Ant", "Ante", "n", "nt", "nte", "t", "te", "e"}.
  *
  * @param TheString $string
- * @return UniqueLinkedList
+ * @return LinkedList
  */
-function getAllSubstrings(TheString $string) : UniqueLinkedList
+function getAllSubstrings(TheString $string) : LinkedList
 {
-    $substringList = new UniqueLinkedList();
+    $substringList = new LinkedList();
     $length = $string->length();
 
     for ($i = 0; $i < $length; $i++)
@@ -22,7 +22,7 @@ function getAllSubstrings(TheString $string) : UniqueLinkedList
              $substringLength <= ($length - $i);
              $substringLength++)
         {
-            $substringList->add($string->getSubstring($i, $substringLength));
+            $substringList->pushBack($string->getSubstring($i, $substringLength));
         }
     }
 
@@ -32,17 +32,19 @@ function getAllSubstrings(TheString $string) : UniqueLinkedList
 /**
  * Intersect two lists.
  *
- * @param UniqueLinkedList $list1 - first list.
- * @param UniqueLinkedList $list2 - second list.
- * @return UniqueLinkedList
+ * @param LinkedList $list1 - first list.
+ * @param LinkedList $list2 - second list.
+ * @return LinkedList
  */
-function intersect(UniqueLinkedList $list1,
-                   UniqueLinkedList $list2) : UniqueLinkedList
+function intersect(LinkedList $list1,
+                   LinkedList $list2) : LinkedList
 {
-    $list = new UniqueLinkedList();
+    $list = new LinkedList();
 
-    $list1->forRange(function ($data1) use ($list2, $list) {
-        $list2->forRange(function ($data2) use ($data1, $list) {
+    $list1->forRange(function ($data1) use ($list2, $list)
+    {
+        $list2->forRange(function ($data2) use ($data1, $list)
+        {
            if ($data1 == $data2)
            {
                $list->pushBack($data1);
@@ -61,15 +63,11 @@ function longestCommonSubstring(TheString $string1,
     $intersectList = intersect($substringList1, $substringList2);
 
     $intersectList->sort(function (TheString $string1, TheString $string2) {
-        return $string1->compare($string2) < 0;
-    });
-
-    $intersectList->forRange(function (TheString $string) {
-        echo $string . "<br>";
+        return $string1->length() > $string2->length();
     });
 
     return $intersectList->first();
 }
 
-var_dump(longestCommonSubstring(new TheString("ananas"),
-                                new TheString("ana")));
+var_dump(longestCommonSubstring(new TheString("Ana voli milovana"),
+                                new TheString("kravana")));

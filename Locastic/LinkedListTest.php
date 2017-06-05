@@ -14,9 +14,7 @@ class LinkedListTest extends TestCase
     private function checkList(LinkedList $list, array $array) : void
     {
         $i = 0;
-
         $this->assertEquals($list->length(), count($array));
-
         $list->forRange(function ($data) use ($array, &$i) {
             $this->assertEquals($array[$i++], $data);
         });
@@ -103,4 +101,50 @@ class LinkedListTest extends TestCase
 
         $this->checkList($list, array(0, 2, 3, 19));
     }
+
+    /**
+     * Test LinkedList::removeAt()
+     */
+    public function test_removeAt() : void
+    {
+        $list = new LinkedList();
+
+        $list->pushBack(19);
+        $list->pushBack(2);
+        $list->pushBack(3);
+        $list->pushBack(0);
+        $list->pushBack(-43);
+
+        $list->removeAt(-1);
+        $this->checkList($list, array(19, 2, 3, 0, -43));
+
+        $list->removeAt($list->length());
+        $this->checkList($list, array(19, 2, 3, 0, -43));
+
+        $list->removeAt(0);
+        $this->checkList($list, array(2, 3, 0, -43));
+
+        $list->removeAt($list->length() - 1);
+        $this->checkList($list, array(2, 3, 0));
+
+        $list->removeAt(1);
+        $this->checkList($list, array(2, 0));
+
+        $list->removeAt($list->length() - 1);
+        $this->checkList($list, array(2));
+
+        $list->removeAt(0);
+        $this->checkList($list, array());
+
+        $list->removeAt(0);
+        $this->checkList($list, array());
+
+        $list->removeAt(-1);
+        $this->checkList($list, array());
+
+        $list->removeAt(15);
+        $this->checkList($list, array());
+    }
+
+
 }

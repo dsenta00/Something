@@ -90,9 +90,10 @@ class UniqueLinkedList extends LinkedList
              $node;
              $node = $node->next())
         {
-            $func($node->getData());
+            $func($node->getData()->getData());
         }
     }
+
     /**
      * Sort UniqueLinkedList.
      * This overrides parent::sort defined in LinkedList.
@@ -108,8 +109,8 @@ class UniqueLinkedList extends LinkedList
                 $node1 = $this->at($i);
                 $node2 = $this->at($j);
 
-                if ($func($node2->getData(),
-                          $node1->getData()))
+                if ($func($node2->getData()->getData(),
+                          $node1->getData()->getData()))
                 {
                     $this->swap($node1, $node2);
                 }

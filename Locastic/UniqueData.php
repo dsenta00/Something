@@ -13,6 +13,11 @@ class UniqueData
     private $data;
 
     /**
+     * @var int - number of repetition.
+     */
+    protected $counter = 1;
+
+    /**
      * UniqueData constructor.
      * @param $data - The data.
      */
@@ -20,11 +25,6 @@ class UniqueData
     {
         $this->data = $data;
     }
-
-    /**
-     * @var int - number of repetition.
-     */
-    protected $counter = 1;
 
     /**
      * Get data.

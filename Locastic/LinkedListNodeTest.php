@@ -5,7 +5,12 @@ use PHPUnit\Framework\TestCase;
 
 class LinkedListNodeTest extends TestCase
 {
-
+    /**
+     * Check order.
+     *
+     * @param LinkedListNode $head - list.
+     * @param array $array - the array.
+     */
     private function checkOrder(LinkedListNode $head, array $array)
     {
         $i = 0;
@@ -28,6 +33,9 @@ class LinkedListNodeTest extends TestCase
         }
     }
 
+    /**
+     * Test basics.
+     */
     public function test_basics()
     {
         $head = new LinkedListNode("head");

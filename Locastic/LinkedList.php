@@ -41,7 +41,7 @@ class LinkedList
     protected function swap(LinkedListNode $node1,
                             LinkedListNode $node2)
     {
-        if (!$node1 || !$node2)
+        if (!$node1 or !$node2)
         {
             return;
         }
@@ -103,6 +103,32 @@ class LinkedList
         return null;
     }
 
+    /**
+     * Get data.
+     *
+     * @param int $index - list index.
+     * @return data if exist, otherwise return null.
+     */
+    public function get(int $index)
+    {
+        $node = $this->at($index);
+        return $node ? $node->getData() : null;
+    }
+
+    /**
+     * Remove data at index.
+     *
+     * @param int $index - list index.
+     */
+    public function removeAt(int $index)
+    {
+        $node = $this->at($index);
+        if ($node)
+        {
+            $node->linkOut();
+            $this->length--;
+        }
+    }
     /**
      * Get list length.
      *

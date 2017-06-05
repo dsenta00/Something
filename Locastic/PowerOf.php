@@ -4,9 +4,7 @@ function powerOf(int $n, int $m) : float
 {
     if (($n == 0) && ($m < 1))
     {
-        /* throw new Exception("Undefined -> 0^" . $m); */
-        echo "Undefined -> 0^" . $m;
-        return 0.0;
+        throw new Exception("Undefined -> 0^" . $m);
     }
 
     $result = 1.0;
@@ -35,5 +33,20 @@ function powerOf(int $n, int $m) : float
 
 var_dump(powerOf(2,3));
 var_dump(powerOf(2,-3));
-var_dump(powerOf(0,0));
-var_dump(powerOf(0,-5));
+try
+{
+    var_dump(powerOf(0, 0));
+}
+catch(Exception $e)
+{
+    echo "Faljen Isus čeljadi\n";
+}
+
+try
+{
+    var_dump(powerOf(0, -5));
+}
+catch (Exception $e)
+{
+    echo "More li se\n";
+}
