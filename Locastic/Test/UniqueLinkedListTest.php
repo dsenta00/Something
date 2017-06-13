@@ -1,6 +1,6 @@
 <?php
 
-require_once ('UniqueLinkedList.php');
+require_once ('../Library/UniqueLinkedList.php');
 use PHPUnit\Framework\TestCase;
 
 class UniqueLinkedListTest extends TestCase

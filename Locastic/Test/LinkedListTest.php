@@ -1,6 +1,6 @@
 <?php
 
-require_once('LinkedList.php');
+require_once('../Library/LinkedList.php');
 use PHPUnit\Framework\TestCase;
 
 class LinkedListTest extends TestCase

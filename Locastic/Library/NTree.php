@@ -1,7 +1,10 @@
 <?php
 
-require_once ('TreeNode.php');
+require_once('TreeNode.php');
 
+/**
+ * Class NTree. Tree with nodes that has 0..N children leafs.
+ */
 class NTree
 {
     /**

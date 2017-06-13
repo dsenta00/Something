@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: edujsen
- * Date: 5.6.2017.
- * Time: 15:45
- */
 
-require_once ('NTree.php');
+require_once('../Library/NTree.php');
 use PHPUnit\Framework\TestCase;
 
 class NTreeTest extends TestCase

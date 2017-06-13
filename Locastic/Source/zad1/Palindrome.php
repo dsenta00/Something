@@ -1,6 +1,6 @@
 <?php
 
-require_once('TheString.php');
+require_once('../../Library/TheString.php');
 
 $theString = new TheString("miljenko");
 var_dump($theString->isPalindrome());

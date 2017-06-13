@@ -5,6 +5,9 @@
  */
 class LinkedListNode
 {
+    /**
+     * @var
+     */
     private $data;
 
     /**
@@ -21,7 +24,7 @@ class LinkedListNode
      * LinkedListNode constructor.
      * @param $data - The data.
      */
-    function __construct($data)
+    function __construct($data = null)
     {
         $this->data = $data;
         $this->next = null;

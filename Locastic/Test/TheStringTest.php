@@ -1,6 +1,6 @@
 <?php
 
-require_once('TheString.php');
+require_once('../Library/TheString.php');
 use PHPUnit\Framework\TestCase;
 
 final class TheStringTest extends TestCase

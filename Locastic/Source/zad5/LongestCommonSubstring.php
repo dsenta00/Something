@@ -1,7 +1,7 @@
 <?php
 
-require_once('TheString.php');
-require_once('UniqueLinkedList.php');
+require_once('../../Library/TheString.php');
+require_once('../../Library/UniqueLinkedList.php');
 
 /**
  * Get substring list.
@@ -55,6 +55,13 @@ function intersect(LinkedList $list1,
     return $list;
 }
 
+/**
+ * Get longest common substring.
+ *
+ * @param TheString $string1
+ * @param TheString $string2
+ * @return null|The
+ */
 function longestCommonSubstring(TheString $string1,
                                 TheString $string2)
 {

@@ -27,7 +27,7 @@ class LinkedList
      */
     function __construct()
     {
-        $this->head = new LinkedListNode(null);
+        $this->head = new LinkedListNode();
         $this->last = $this->head;
         $this->length = 0;
     }

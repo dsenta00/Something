@@ -1,6 +1,6 @@
 <?php
 
-require_once ('NTree.php');
+require_once('../../Library/NTree.php');
 
 $tree = new NTree();
 $tree->insert("ProgramFiles");

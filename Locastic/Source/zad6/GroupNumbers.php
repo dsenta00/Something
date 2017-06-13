@@ -1,7 +1,13 @@
 <?php
 
-require_once ('LinkedList.php');
+require_once('../../Library/LinkedList.php');
 
+/**
+ * Convert array to linked list.
+ *
+ * @param array $array
+ * @return LinkedList
+ */
 function arrayToList(array $array) : LinkedList
 {
     $list = new LinkedList();
@@ -14,15 +20,13 @@ function arrayToList(array $array) : LinkedList
     return $list;
 }
 
-function intListSum(LinkedList $list) : int
-{
-    $sum = 0;
-    $list->forRange(function ($data) use (&$sum) {
-        $sum += $data;
-    });
-    return $sum;
-}
-
+/**
+ * Group numbers.
+ *
+ * @param LinkedList $list - integer list.
+ * @param int $numGroups - number of groups.
+ * @return LinkedList|null - groups.
+ */
 function groupNumbers(LinkedList $list, int $numGroups)
 {
     if (($numGroups <= 0) or ($list->length() == 0))
@@ -71,6 +75,10 @@ function groupNumbers(LinkedList $list, int $numGroups)
     return $groups;
 }
 
+/**
+ * Print groups.
+ * @param LinkedList $groups
+ */
 function printGroups(LinkedList $groups)
 {
     $groups->forRange(function (LinkedList $group) {

@@ -2,10 +2,13 @@
 
 require_once('LinkedList.php');
 
+/**
+ * Class TreeNode. Leaf that contains 0..N children leafs and parent leaf.
+ */
 class TreeNode
 {
     /**
-     * @var The data.
+     * @var
      */
     protected $data;
 

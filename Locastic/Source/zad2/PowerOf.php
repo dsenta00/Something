@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * Power of mathematical function.
+ *
+ * @param int $n - number
+ * @param int $m - exponent.
+ * @return float - float number.
+ *
+ * @throws Exception
+ */
 function powerOf(int $n, int $m) : float
 {
     if (($n == 0) && ($m < 1))

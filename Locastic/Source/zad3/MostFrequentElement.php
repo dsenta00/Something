@@ -1,6 +1,6 @@
 <?php
 
-require_once('UniqueLinkedList.php');
+require_once('../../Library/UniqueLinkedList.php');
 
 /**
  * Get most frequent element in array.
